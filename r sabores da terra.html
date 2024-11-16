@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabores da Terra</title>
+    
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        background: url(pink.jpg);
+        background-size: cover;
+
+    }
+    
+    
+    header {
+        text-align: center;
+    }
+    
+    @media (max-width: 768px) {
+        header {
+            font-size: 1.2em;
+        }
+    }
+    .dark-mode {
+        background-color: #333;
+        color: #fff;
+    }
+   </style> 
+</head>
+<body>
+    <button id="modo-noturno">Ativar Modo Noturno</button>
+    <header>
+        <h1>Bem-vindo ao Sabores da Terra</h1>
+        <p>Culinária regional e saudável em um ambiente acolhedor.</p>
+        <img src="restaurante.jpg" style="margin: 20; width: 950px; height: 560px;" alt="Foto do restaurante">
+        <button onclick="location.href='#menu'">Ver Menu</button>
+    </header>
+    
+    <section id="sobre-nos">
+        <h2>Sobre Nós</h2>
+        <p>Especializados em culinária regional e saudável, proporcionamos uma experiência única.</p>
+    </section>
+    
+    <section id="promocoes">
+        <h2>Promoções Semanais</h2>
+        <div id="itens-promocoes">
+            <div class="item" data-category="jantar-a-dois">
+                <img src="sabor1612x612.jpg" style="width: 650px; height: 550px;">
+                <h3>Adqados para desgustar dos sabores com uma boa conversa</h3>
+                <p>Descrição:pratos especias para si. Preço: 250mt</p>
+            </div>
+        
+            <div id="itens-promocoes">
+                <div class="item" data-category="desconto-no-almoco">
+                    <img src="sabor612x612.jpg" style="width: 650px; height: 550px;">
+                    <h3>pizza Zambezia</h3>
+                    <p>Descrição:Paga um Leva dois. Preço: 450mt</p>
+                </div>     
+        <div id="banner-promocoes"></div>
+    </section>
+
+
+    <section id="Depoimentos dos Clientes">
+        <h2>Depoimentos</h2>
+        <img src="test.jpg" style="width: 650px; height: 550px;"
+        <p>Joao Maintega Ortega: O restaurante e bastante aconchegante e com pratos bastantes saudaveis</p>
+        <p>Joao Tambudzai: Venho pra ca, cada vez com mais frenquencias , pelos pratos aqui servidos, pelo atendimento e pelo ambiente</p>
+    </section>
+
+    <footer>
+        <p>Missão: Oferecer pratos saborosos e nutritivos com ingredientes frescos da região.</p>
+    </footer>
+
+   
+    
+    <section id="menu">
+        <h2>Nosso Menu</h2>
+        <div id="filtros">
+            <button onclick="filtrar('vegetariano')">Vegetariano</button>
+            <button onclick="filtrar('sem-gluten')">Sem Glúten</button>
+            <button onclick="filtrar('prato-do-dia')">Prato do Dia</button>
+            <button onclick="filtrar('bebidas')">Bebidas</button>
+        </div>
+        <div id="itens-menu">
+            <div class="item" data-category="vegetariano">
+                <img src="rsdt3.jpg" style="width: 650px; height: 550px;">
+                <h3>Salada</h3>
+                <p>Descrição:Salada de legumes frescos. Preço: 100 a 150mt</p>
+            </div>
+            
+        </div>
+        <div id="itens-menu">
+            <div class="item" data-category="sem-gluten">
+                <img src="sabor.jpg" style="width: 650px; height: 550px;">
+                <h3>Pratos sem Gordura</h3>
+                <p>Descrição: Pratos preparados Especialmente Pra voces Que Nao Gosta De Gorduras. Preço: 250 a 450mt</p>
+            </div>
+            
+        </div>
+        <div id="itens-menu">
+            <div class="item" data-category="prato-do-dia">
+                <img src="pprincipal.jpg" style="width: 650px; height: 550px;">
+                <h3>Galinha Zambezia</h3>
+                <p>Descrição:Prato tipico da provincia de zambezia. Preço: 450mt</p>
+            </div>
+            
+        </div>
+
+        <div id="itens-menu">
+            <div class="item" data-category="bebidas">
+                <img src="bebida1.jpg" style="width: 650px; height: 550px;">
+                <h3>Sumos naturais</h3>
+                <p>Descrição: Bebidas preparadas com frutas frescas na hora. Preço:130 a  250mt</p>
+            </div>
+            
+        </div>
+    </section>
+    
+    <section id="reservas">
+        <h2>Faça sua Reserva</h2>
+        <form id="form-reserva">
+            <input type="text" id="nome" placeholder="Seu Nome">
+            <input type="email" id="email" placeholder="Seu Email">
+            <input type="tel" id="telefone" placeholder="Telefone">
+            <input type="datetime-local" id="data-hora">
+            <input type="number" id="pessoas" placeholder="Número de Pessoas">
+            <button type="submit">Enviar</button>
+        </form>
+        <p id="confirmacao-reserva"></p>
+    </section>
+    
+   
+    <section id="contato">
+        <h2>Contato</h2>
+        <form id="form-contato">
+            <input type="text" id="contato-nome" placeholder="Seu Nome">
+            <input type="email" id="contato-email" placeholder="Seu Email">
+            <input type="text" id="assunto" placeholder="Assunto">
+            <textarea id="mensagem" placeholder="Sua Mensagem"></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+        <p>Endereço: Rua Exemplo, 123 - Cidade, Estado</p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18..."></iframe>
+    </section>
+    
+    <div class="avaliacao">
+        <span>Avalie este prato:</span>
+        <div class="estrelas">
+            <span>&#9733;</span>
+            <span>&#9733;</span>
+            <span>&#9733;</span>
+            <span>&#9733;</span>
+            <span>&#9733;</span>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+<script>
+   // script.js
+document.addEventListener("DOMContentLoaded", function() {
+    const promoBanner = document.getElementById('banner-promocoes');
+    const dayOfWeek = new Date().getDay();
+    let promoMessage;
+
+    switch(dayOfWeek) {
+        case 1: promoMessage = "Segunda-feira: Desconto de 10% no prato X"; break;
+        case 2: promoMessage = "Terça-feira: Jantar temático especial"; break;
+        // Continue para outros dias da semana
+        default: promoMessage = "Visite-nos para mais promoções!";
+    }
+
+    promoBanner.textContent = promoMessage;
+});
+ 
+
+
+ // script.js
+function filtrar(categoria) {
+    const itens = document.querySelectorAll('#itens-menu .item');
+    itens.forEach(item => {
+        if (item.getAttribute('data-category') === categoria || categoria === 'todos') {
+            item.style.display = 'block';
+        } else {
+            item.style.display = 'none';
+        }
+    });
+}
+
+// script.js
+document.getElementById('form-reserva').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    const nome = document.getElementById('nome').value;
+    const email = document.getElementById('email').value;
+    const dataHora = document.getElementById('data-hora').value;
+    const pessoas = document.getElementById('pessoas').value;
+
+    if (!nome || !email || !dataHora || !pessoas) {
+        alert("Por favor, preencha todos os campos.");
+    } else {
+        document.getElementById('confirmacao-reserva').textContent = "Reserva confirmada! Aguardamos você.";
+    }
+});
+
+// script.js
+const estrelas = document.querySelectorAll('.estrelas span');
+estrelas.forEach((estrela, index) => {
+    estrela.addEventListener('click', () => {
+        estrelas.forEach((s, i) => {
+            s.style.color = i <= index ? 'gold' : 'black';
+        });
+        alert(`Você deu ${index + 1} estrelas para este prato!`);
+    });
+});
+
+// script.js
+document.getElementById('modo-noturno').addEventListener('click', function() {
+    document.body.classList.toggle('dark-mode');
+});
+
+</script>
+
+</html>
